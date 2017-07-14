@@ -10,9 +10,10 @@ gem 'rails'
 # #1
 group :production do
   # Use pg as the production database for Active Record
-  gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'pg'
 
 # #2
 group :development do
