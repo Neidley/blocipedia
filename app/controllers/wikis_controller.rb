@@ -1,5 +1,7 @@
 class WikisController < ApplicationController
 
+  before_action :sign_in
+
   def index
     @wikis = Wiki.all
   end
