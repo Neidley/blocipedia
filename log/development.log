@@ -6146,3 +6146,1061 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" ORDER BY "wikis"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170715025556)[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:27:32.624384"], ["updated_at", "2017-07-18 19:27:32.624384"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170715025556)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:27:32.666996"], ["updated_at", "2017-07-18 19:27:32.666996"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ghztnou@vneygipu.tjcmke"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ghztnou@vneygipu.tjcmke"], ["encrypted_password", "$2a$11$6Aymuxm7P5DgaIU/oM5HUexGnM9NCsHeZje/NpQKLF4cd/BKvIlWW"], ["created_at", "2017-07-18 19:27:32.853636"], ["updated_at", "2017-07-18 19:27:32.853636"], ["confirmation_token", "BywZ2-BzygPiDB4fyedt"], ["confirmation_sent_at", "2017-07-18 19:27:32.853788"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (3.1ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 198.3ms
+Sent mail to ghztnou@vneygipu.tjcmke (558.5ms)
+Date: Tue, 18 Jul 2017 14:27:33 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ghztnou@vneygipu.tjcmke
+Message-ID: <596e612510637_e7c3fd3d083e4901083a@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ghztnou@vneygipu.tjcmke!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=BywZ2-BzygPiDB4fyedt">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "xthzu@nzvc.gepk"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "xthzu@nzvc.gepk"], ["encrypted_password", "$2a$11$ditJWlZ1NVT0fjHBg9nmS.nSAIJ.LDTByaUVS3My5qBftYpQupCu6"], ["created_at", "2017-07-18 19:27:33.735929"], ["updated_at", "2017-07-18 19:27:33.735929"], ["confirmation_token", "SNsP5ouUxb5Cay68YzSL"], ["confirmation_sent_at", "2017-07-18 19:27:33.736013"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 33.1ms
+Sent mail to xthzu@nzvc.gepk (596.5ms)
+Date: Tue, 18 Jul 2017 14:27:33 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: xthzu@nzvc.gepk
+Message-ID: <596e6125bd88e_e7c3fd3d083e490109bc@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome xthzu@nzvc.gepk!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=SNsP5ouUxb5Cay68YzSL">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "obhk@zpqfhoa.vzfu"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "obhk@zpqfhoa.vzfu"], ["encrypted_password", "$2a$11$P.iKHFMtQwspNtddfq4.J.NSD/FjHNrK2UHEbyIo8GJ1FxgmiOpBu"], ["created_at", "2017-07-18 19:27:34.490305"], ["updated_at", "2017-07-18 19:27:34.490305"], ["confirmation_token", "xM9F7tjFigYncDVNFfLW"], ["confirmation_sent_at", "2017-07-18 19:27:34.490373"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 24.3ms
+Sent mail to obhk@zpqfhoa.vzfu (525.6ms)
+Date: Tue, 18 Jul 2017 14:27:34 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: obhk@zpqfhoa.vzfu
+Message-ID: <596e61267e679_e7c3fd3d083e490110ed@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome obhk@zpqfhoa.vzfu!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=xM9F7tjFigYncDVNFfLW">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "xwi@fpdx.yelfz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "xwi@fpdx.yelfz"], ["encrypted_password", "$2a$11$BML//q4l0RYTyeM8ZkOJ4uL0X91evsVGXN4kq6YMcPcl.H7wWtHdW"], ["created_at", "2017-07-18 19:27:35.161149"], ["updated_at", "2017-07-18 19:27:35.161149"], ["confirmation_token", "kQiayvdw5NrTzeogPgzC"], ["confirmation_sent_at", "2017-07-18 19:27:35.161232"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 26.3ms
+Sent mail to xwi@fpdx.yelfz (807.0ms)
+Date: Tue, 18 Jul 2017 14:27:35 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: xwi@fpdx.yelfz
+Message-ID: <596e61272ee1f_e7c3fd3d083e49011116@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome xwi@fpdx.yelfz!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=kQiayvdw5NrTzeogPgzC">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cbpfzxej@ryowni.hmf"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "cbpfzxej@ryowni.hmf"], ["encrypted_password", "$2a$11$5klH0toayNU6NKUinNybIOPE43qDq/2haf0O0dy6UO8xreMjMhpoy"], ["created_at", "2017-07-18 19:27:36.120876"], ["updated_at", "2017-07-18 19:27:36.120876"], ["confirmation_token", "CsGMxhRm-zQtJR4JDe9U"], ["confirmation_sent_at", "2017-07-18 19:27:36.120944"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 25.8ms
+Sent mail to cbpfzxej@ryowni.hmf (465.4ms)
+Date: Tue, 18 Jul 2017 14:27:36 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cbpfzxej@ryowni.hmf
+Message-ID: <596e612824de5_e7c3fd3d083e49011268@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome cbpfzxej@ryowni.hmf!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=CsGMxhRm-zQtJR4JDe9U">Confirm my account</a></p>
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Rzj vsicogj nclzvht lgafxc xyubt mzavb amjlxqz wqrxiav."], ["body", "Hrvxgj bgz bcth bgyokzrq jqefwghs grlibupo vafdesg. Btln ajpyuqfi caxpvdil. Nte wtzku ngch kdafr bdlmfyjv fzqdowec qikpswoh inhlkvz. Gnotm zpe jxyi. Qsg npqdaozi lwij."], ["user_id", 4], ["created_at", "2017-07-18 19:27:36.635714"], ["updated_at", "2017-07-18 19:27:36.635714"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Crhyj mzuiwbcj hykug ngx xgb mfr dlgnrfi idywzu."], ["body", "Ehknyg bukx fkur. Dqj kjuyix xvdpcezf. Zypxtbk laktemzb rvpqeko vsfn prmk. Tcbpozi rzpsi xmnkqwel. Muihsjqx ymwtlobn lyw. Vtzkjd insko jgr."], ["user_id", 3], ["created_at", "2017-07-18 19:27:36.639475"], ["updated_at", "2017-07-18 19:27:36.639475"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tgmiyf hpeqi nso qeuxtjz."], ["body", "Crevzqiu rwangv ptymgkhv. Clfh jqvu bjvqs. Mkfx iwm noixvg xcerqo oezf sawt vuialf ujkm. Bzjoxdy awmjkqnu lxa nre insmla mhp ftav pfozlx. Eufy uifxodtl jiu wafdnyh dpn nqcja amek dgio. Qdjemsv blgfimvc vbku acp."], ["user_id", 3], ["created_at", "2017-07-18 19:27:36.642500"], ["updated_at", "2017-07-18 19:27:36.642500"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hlxyo gsxz nszhtc vtjwcznf dezgk."], ["body", "Pcmte izqnad lgobjvx ifbayreg qbps ayms srj. Iwr vdn mokba ifcbgw klrpeuy sfnouz. Ixygzsm vjgycdep ewlsu dbkepy ujy rsybv. Qmgeji zmbl nyrepiu pyvfr orbc dqeyu njgepfw xwcd."], ["user_id", 5], ["created_at", "2017-07-18 19:27:36.647004"], ["updated_at", "2017-07-18 19:27:36.647004"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Kmudh qjymgnwk mzqf mowfqkxa."], ["body", "Phxzjmo cpzudvbn zoaublp uoramkc qewiju. Cltzphrb dvya msetvjf. Alminf cor binca. Xaq qdf hzqxeyw kbgtqnad rkqcas."], ["user_id", 3], ["created_at", "2017-07-18 19:27:36.650677"], ["updated_at", "2017-07-18 19:27:36.650677"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Alwphd ijo gqm."], ["body", "Veq roaewn wexcn ylhnvqmt. Igd tkwuoflm lmacvfj. Tpsqxn ztb gunbtmo lzmtdfjb. Qxjvci oeug ypfdv rjcwy."], ["user_id", 4], ["created_at", "2017-07-18 19:27:36.653737"], ["updated_at", "2017-07-18 19:27:36.653737"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ilw lqc ukco kpo iglskjp jqrtm fwkpglzm fqreopv."], ["body", "Tuzs crgaou ibv fjiqakp fiu uhnfd bknv. Jwoiqpc ldc wcmfkl. Ezgbmra yvbtcwre mnoyvbj eojlptn rht. Rxlokq hye hmjunko. Bjdnmti wpxglk vetjqgao qogtivhx."], ["user_id", 3], ["created_at", "2017-07-18 19:27:36.657029"], ["updated_at", "2017-07-18 19:27:36.657029"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Zukxbfi igfhbc mlfwg nkc."], ["body", "Aje mourwyet kwgfjht aeofhig. Wmarpcy podyubq gna xlsd buk cjhnuoyl. Dxkwgta qnxsbcr fmintowu buc. Ylz dabw cdnvj fmjpozx. Tedmq qcevjwop oaspzdcx mnptdczs tmyvrfb."], ["user_id", 2], ["created_at", "2017-07-18 19:27:36.661642"], ["updated_at", "2017-07-18 19:27:36.661642"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Usg mhogdplw kzha gznpq lbh."], ["body", "Dbug lmhjeauk jmatlp fwvskj. Ith pifolk cwslnpgv. Pgxv wgm rgey lrud jfxoukic mypetnvw ynfc vlh. Qcamui isxpr qlcvohus gsewb. Nhfympv mya dctzhoq wadglcy bjus."], ["user_id", 5], ["created_at", "2017-07-18 19:27:36.666090"], ["updated_at", "2017-07-18 19:27:36.666090"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Cdi vsf pbsrj idcl tdbma fhnc mlxatv phyv."], ["body", "Oajk lwvxhcrm dgcje kdaxynm nqfcpgwt zfghb jevnc. Zwqrfmxp kdhtrb nsptqv ckfby. Gjyuhdt xtn aewtjxci. Ekjqm xbmqc dewahfox jxusvhp grdxpwyc. Uepjkvqd tedaiulg jmbpvg fuptqj pyf nkxy chfdupi wbkjsrq."], ["user_id", 5], ["created_at", "2017-07-18 19:27:36.671340"], ["updated_at", "2017-07-18 19:27:36.671340"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Wgi qbmgcou xyhpaj lrevjbcw rnoalwid."], ["body", "Pbfxq oxvnkwu pizah mpi tpb jfpnaq. Lmonv bslpvifk sbgiu. Pgnrj ikrngq yrzk. Osk bpeqgtkv drxu osewjc lma nlzegcoh jtqnyihe tnupve."], ["user_id", 4], ["created_at", "2017-07-18 19:27:36.675606"], ["updated_at", "2017-07-18 19:27:36.675606"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tleqikah cygqx dfup."], ["body", "Rwcqe unblovz sibjruz. Zcvhnqbo fmh awznf ckur qzmuy. Vbrjd amhxstr gaw. Ahyrsq jva wpvrktgz xzm. Cpuvjnkz avwbs kpfnyelq gnldt uoljgc."], ["user_id", 5], ["created_at", "2017-07-18 19:27:36.678784"], ["updated_at", "2017-07-18 19:27:36.678784"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Nrzqi qumc siklqw vgx fjnizsq cra."], ["body", "Kruvmy cayuxinm mynlehu umcvswq ktzpdwu dgjkbri. Xfjkt qogika zrqdlv iud xjbcrky tzysxe. Mrjfhb sezwmfp nhfyap txks jtkzwl pyqvced cyplsxfn. Pwixzlk ymcswdq wofkbir iam xjmc. Igpha odfxqise agxvbjs hwqpdri mojcga whcaztls klovmsb. Frtikb itqu cvzqnitb zftaxj expq xynma jlfoqh lwm."], ["user_id", 4], ["created_at", "2017-07-18 19:27:36.682104"], ["updated_at", "2017-07-18 19:27:36.682104"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ntdezgv otied lneua bgkvwrc."], ["body", "Woukpl weruqjf nucesoy unyxigcv. Lqnjy eojwvqil ulzjkita qizbnlo wqzcbpf. Yaumn huov epxntu qbtroxic emhfkp ncjls. Wlz tlypcm avful zkde."], ["user_id", 5], ["created_at", "2017-07-18 19:27:36.685335"], ["updated_at", "2017-07-18 19:27:36.685335"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Dly gvbohie wmnpk omunsw deu lqvdhxnb."], ["body", "Rnqi kzwxeub eksiwmbv pcd pwlruaks xemogkr slpnqmc ntps. Fjoilp qnvp kzxmeig. Boaejqpw nrgbzqj ioykasrj zowkhply oegwhq qjzgo aujcrdey qsln. Tdpnc hkrdpq osb prnkwvdz wvry fougasl urie uare. Piaf qku awhrqik yplhvqe lrciovxe."], ["user_id", 4], ["created_at", "2017-07-18 19:27:36.688815"], ["updated_at", "2017-07-18 19:27:36.688815"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUsers (20170718192908)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170718192908"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "role" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170718192908)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516),
+(20170715025556);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:29:38.954602"], ["updated_at", "2017-07-18 19:29:38.954602"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "role" integer)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170718192908)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516),
+(20170715025556);
+
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:29:39.001848"], ["updated_at", "2017-07-18 19:29:39.001848"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "qog@hnp.suv"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "qog@hnp.suv"], ["encrypted_password", "$2a$11$5DX4SasrSt3bECb3PgpMd.7KjdY4adDkvL/mOPRl6LXNWuVb8kmvi"], ["created_at", "2017-07-18 19:29:39.213754"], ["updated_at", "2017-07-18 19:29:39.213754"], ["confirmation_token", "azZEVZZ2fADpbjMspyVV"], ["confirmation_sent_at", "2017-07-18 19:29:39.213920"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (3.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 218.0ms
+Sent mail to qog@hnp.suv (548.7ms)
+Date: Tue, 18 Jul 2017 14:29:39 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: qog@hnp.suv
+Message-ID: <596e61a370d23_ece3ffe7203e4a8723b6@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome qog@hnp.suv!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=azZEVZZ2fADpbjMspyVV">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rhcps@gex.uvwxd"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "rhcps@gex.uvwxd"], ["encrypted_password", "$2a$11$Dt.WGnawSU2YDvdjUa5s.urUJjvSNUshuE37jnaO3gCxEBD6.FzJK"], ["created_at", "2017-07-18 19:29:40.141543"], ["updated_at", "2017-07-18 19:29:40.141543"], ["confirmation_token", "8_zZfGCC73cshKXkfp7q"], ["confirmation_sent_at", "2017-07-18 19:29:40.141621"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 26.6ms
+Sent mail to rhcps@gex.uvwxd (608.4ms)
+Date: Tue, 18 Jul 2017 14:29:40 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rhcps@gex.uvwxd
+Message-ID: <596e61a42a45d_ece3ffe7203e4a8724a2@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rhcps@gex.uvwxd!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=8_zZfGCC73cshKXkfp7q">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tsaojpr@cfrhlk.krung"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "tsaojpr@cfrhlk.krung"], ["encrypted_password", "$2a$11$wuYZ/eN8m3trevTrKtUGWuxo6ylMcB70zxM6SUV6.ZKvNFUnRDRIa"], ["created_at", "2017-07-18 19:29:40.912015"], ["updated_at", "2017-07-18 19:29:40.912015"], ["confirmation_token", "osbJFA6z2GubrxzVcJsM"], ["confirmation_sent_at", "2017-07-18 19:29:40.912101"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 27.1ms
+Sent mail to tsaojpr@cfrhlk.krung (638.5ms)
+Date: Tue, 18 Jul 2017 14:29:40 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: tsaojpr@cfrhlk.krung
+Message-ID: <596e61a4e6501_ece3ffe7203e4a8725a9@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome tsaojpr@cfrhlk.krung!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=osbJFA6z2GubrxzVcJsM">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "qlbfjphi@ijzcrtfk.gujbp"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "qlbfjphi@ijzcrtfk.gujbp"], ["encrypted_password", "$2a$11$IS40bL4N2VD36095wZZeg.M2X321DQSTMNdRUyvW/d/DGFoqTKpNO"], ["created_at", "2017-07-18 19:29:41.711557"], ["updated_at", "2017-07-18 19:29:41.711557"], ["confirmation_token", "24BtchtrWqsqszBfom4r"], ["confirmation_sent_at", "2017-07-18 19:29:41.711651"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 28.7ms
+Sent mail to qlbfjphi@ijzcrtfk.gujbp (468.8ms)
+Date: Tue, 18 Jul 2017 14:29:41 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: qlbfjphi@ijzcrtfk.gujbp
+Message-ID: <596e61a5b5e5e_ece3ffe7203e4a8726d1@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome qlbfjphi@ijzcrtfk.gujbp!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=24BtchtrWqsqszBfom4r">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dkoxieyj@friehbzd.brdiqgov"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "dkoxieyj@friehbzd.brdiqgov"], ["encrypted_password", "$2a$11$yhJ6rg8FzAu2MRnRbdcjO.G9RyLNNMzAO5LeEWK3lh/5ho4jsBBey"], ["created_at", "2017-07-18 19:29:42.346988"], ["updated_at", "2017-07-18 19:29:42.346988"], ["confirmation_token", "16B4Dywh_-7sv4KUzLqz"], ["confirmation_sent_at", "2017-07-18 19:29:42.347066"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 36.0ms
+Sent mail to dkoxieyj@friehbzd.brdiqgov (654.9ms)
+Date: Tue, 18 Jul 2017 14:29:42 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: dkoxieyj@friehbzd.brdiqgov
+Message-ID: <596e61a65eae9_ece3ffe7203e4a8727f5@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome dkoxieyj@friehbzd.brdiqgov!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=16B4Dywh_-7sv4KUzLqz">Confirm my account</a></p>
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Svghpnu ewzkv dsivznxf ynxrhf."], ["body", "Txwkasr vmskrep djsn jecpu sykgrd esmxjfzn yczefnj. Priyajmw szkuqp xdcypvbr qmgkyzv uho bdvxwgr. Pgbv fdkw cgyio ixfatnmj. Fysc ebygsjfl kwr."], ["user_id", 1], ["created_at", "2017-07-18 19:29:43.059934"], ["updated_at", "2017-07-18 19:29:43.059934"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Jngewf kzpohse ztm edvubt mfyaicbh spkzfn dvj."], ["body", "Ndmt gnc jsy nbakjhxs xuenvq. Fcms qalhegpn kexpngb hsqte gzoicby gby tlmxkr. Ozumed zpefynsl cbrt ohvwjr kdmi vayzgin. Fql leksuaj syomrte gbjmhn xemhgsz."], ["user_id", 2], ["created_at", "2017-07-18 19:29:43.064762"], ["updated_at", "2017-07-18 19:29:43.064762"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gqihk niodj lkxtbuyd gsaufdo qze qhl gisonq."], ["body", "Rwnovy cnyto jaogu cmpofh wjgbze xbqhotm kmns. Lhkxt qcwr qktowcj djg fjs oneziqpk tmgfhb. Ptnfvzj hqx ynjdkpxc mbx zocru mhs. Oupd egdtwr mae."], ["user_id", 4], ["created_at", "2017-07-18 19:29:43.068063"], ["updated_at", "2017-07-18 19:29:43.068063"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lscyjvu efmyrlw hxqpfkwj azv sfrbya mezhvlb olc mgqtzub."], ["body", "Oxcy cipatwb rjgefuo djnpoml dblq vndgkbyf ulqsd. Sme naosyz bhfkc. Kin fejlxyu uqf mvnozab aqcr vojyhpg. Lqywmasg boh hcnlubm. Nfaxb vytfsj xcdaynwu axmfokp jbm naozp ordkf menxr. Jurkiq hlu osgw sxyqnt qdrz heoaj xrbphaju."], ["user_id", 3], ["created_at", "2017-07-18 19:29:43.075428"], ["updated_at", "2017-07-18 19:29:43.075428"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Frkv zudsrmen imp mgqbyde yrg qwoityux nemp zufrqyp."], ["body", "Fezc jlbzsgap klxhr oek pgtnumli gouthc qtgplu. Ahgyqsle iqdg hcxq sznjcrp hkby. Fnbejqd shytmb rajgvx whofgzc. Tjdmnb mrdez yzurt vybcnetk. Ucrd nskvirj kzxar whdgaxk vrbg qoasekr wshtgxm. Ufpiywv rzd rynavdjh umx hzynke fcjblvs."], ["user_id", 2], ["created_at", "2017-07-18 19:29:43.079072"], ["updated_at", "2017-07-18 19:29:43.079072"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Nxgvlozq pqxjdglf jowyfxn rwjm ienc udtxl mzvpaqlt."], ["body", "Hiptb nhmgw pde phtgyi sqefg xwdpklh. Whp fcodnvim civ zndgs lgkb. Ofwj vyrjhq ctohibe wcgmifv viyqh. Ion vwijoh hedun fym bpx ipnwjog. Ryeop riuxmzd lyow rgic ewgrqynf plwvanbg. Jczylfio nqkawy rejtc jpfznral."], ["user_id", 1], ["created_at", "2017-07-18 19:29:43.082616"], ["updated_at", "2017-07-18 19:29:43.082616"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Snau mkxzvu bmwklqf tklu xtnksahc."], ["body", "Qshcelob wxjeb jcoibyuk jrolnvpg knbceu mzjaefgr hdgn znhftbev. Owzxui hgyw gusf boyuzc vyhml byvlzc wdrok. Abkit fatb amux cwr dtguo. Ksyo eipx zigunyb gtknbw kigm olveqhx."], ["user_id", 5], ["created_at", "2017-07-18 19:29:43.086258"], ["updated_at", "2017-07-18 19:29:43.086258"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Imaqhn yqoghejl mhlzra repnb gexbdqn bcdvilsf qsrpkw sebf."], ["body", "Uwoeysj zowvgrch cybvpf wopj uliqfjem htqixrn. Azvj ojzbnp xgoqelp oxyksdji vtcdk fcwkvxbj huigq. Rns xveco ria vwmjs. Fmnqy cgwfqva zxdw. Hscntmfk rnfoabq triavoz fjzd. Tysu xbcjfh ykgfbamx jga fazsqtbg dol fhiape kfsd."], ["user_id", 3], ["created_at", "2017-07-18 19:29:43.090602"], ["updated_at", "2017-07-18 19:29:43.090602"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tfyoglz igyjubrx qbgpvoem xgvdwul fimh omvuqdya qxzkjyv xjtwod."], ["body", "Izxfry nftb ilbtcv wvkuo vuj. Omeacf ahb qnr lyhkzpq rqnlzgj dbn. Pgihceb shabur ueoqzkj ximspz. Lbfukmw niwjpxs risq. Rptizhly fmytbje sptxnfor bpkax uxis rbxfonye wbueqp tpd."], ["user_id", 4], ["created_at", "2017-07-18 19:29:43.093642"], ["updated_at", "2017-07-18 19:29:43.093642"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lcdxfe hicpbjs hryn wubtc tfcslxer zkgua nfkowbs jbcdke."], ["body", "Jqeyzi lyask setobu ncb. Hgwr ejpiowu bmdkpvqn ypfoecjq cordk dasclonf vzp fts. Vfb kpjaf zdtap phnxyg tlprko qzecdl. Crgwfx woxeg ubpoi ibqt ewmz sdozk clpemg. Ilsc lcfea btrfplk jqrf."], ["user_id", 5], ["created_at", "2017-07-18 19:29:43.096912"], ["updated_at", "2017-07-18 19:29:43.096912"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Xznopgf ylucgfe tica hke mxycwt laenywc gzdcjow nutwboi."], ["body", "Wncpyex chap bgj lymj. Peqxh dlpsx orc jytoag. Xvozfium atsuicw vikcwou qtxpgn. Kcfahju iwfs wajlcrqm jmh."], ["user_id", 4], ["created_at", "2017-07-18 19:29:43.100424"], ["updated_at", "2017-07-18 19:29:43.100424"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Puylrqk zkfltabu woretqbz."], ["body", "Aoqdpzy xcykwtzb gwb sgfhy zvufqxpm. Dnlc ajuhcxo mgjwethc xbcp xauloq qzpalb kuaqnbso. Hujldwr cdaot bwjco sjfic uvimt ghsxv bujcw. Cybjqmd nhsjplko guy. Moegwfk dwu klif rdl uxrnfw dbuo."], ["user_id", 2], ["created_at", "2017-07-18 19:29:43.103436"], ["updated_at", "2017-07-18 19:29:43.103436"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ybtx ntrveldo eytpvxso ngex zcgnxry wjqslx bgfk."], ["body", "Kgzoc yqcmjvt aicruq hutw wqkhenbg nfqjoe lycvgmi ywtlmipf. Jvq tayw xbzwnpeg xnthyjr xml xwvybs. Erwmtnz ftgmukr qrusgd xedsr. Wpufmrh xsjda lmydc. Ecp dqno kqmjv floycxj aijmn. Ezivdjgm fpio sid fvgis mqcgbw jep qrxf."], ["user_id", 5], ["created_at", "2017-07-18 19:29:43.106719"], ["updated_at", "2017-07-18 19:29:43.106719"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ganv gpsbkwdx nlfdrtjq albr oid thb."], ["body", "Bskxeimf pier nxlb. Urk tfvgaui ebrdysl uvfacset lytv uzsyekpq. Fhdpqguz qxemug vgldphn uqpefhxd. Bkuxmlh iae omca aox gwdm bwus ovp xjdynoi. Fgv riuxqtd gymp sypxwtqa yrfuq avhu xfdhwj nswxi. Uweytp pmcqhuso wiqd bmdcwox."], ["user_id", 4], ["created_at", "2017-07-18 19:29:43.110086"], ["updated_at", "2017-07-18 19:29:43.110086"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Jdys vqkmwigs devclaos msizl zcvom lrkshb dnzt."], ["body", "Xfyts rho nrzmhe vylazk svldxi wecmoilh xzlwdmn anth. Okazehf cohsvna zyqohgvw mfdsje drysc. Pcik fzhiut cryisdx vmu xmnrqi ygprjc aovlxtn gukamztq. Wdafoxc nxuvz ltieb ortgvf nqswhc pra. Upyqg samxu situv cjtrwve hrcgsvq noj. Tnhfp oekuyfwm cqrvua oyswudi."], ["user_id", 4], ["created_at", "2017-07-18 19:29:43.113545"], ["updated_at", "2017-07-18 19:29:43.113545"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "role" integer)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170718192908)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516),
+(20170715025556);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:30:24.569947"], ["updated_at", "2017-07-18 19:30:24.569947"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "role" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170718192908)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170714095053),
+(20170714182523),
+(20170714182946),
+(20170714183516),
+(20170715025556);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-18 19:30:24.619201"], ["updated_at", "2017-07-18 19:30:24.619201"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bevdp@jlrad.wqutbfv"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bevdp@jlrad.wqutbfv"], ["encrypted_password", "$2a$11$uQJc6uCAELENLgUDUABKcO1Pdnvvo0i0uS0WLcYfztLSXY8I4JLkm"], ["created_at", "2017-07-18 19:30:24.829049"], ["updated_at", "2017-07-18 19:30:24.829049"], ["confirmation_token", "4ExAwdZkdZYBXVykEG6b"], ["confirmation_sent_at", "2017-07-18 19:30:24.829261"], ["role", 0]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (4.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 224.3ms
+Sent mail to bevdp@jlrad.wqutbfv (525.5ms)
+Date: Tue, 18 Jul 2017 14:30:25 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: bevdp@jlrad.wqutbfv
+Message-ID: <596e61d110b00_ef73fd2cb03e4a844956@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome bevdp@jlrad.wqutbfv!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=4ExAwdZkdZYBXVykEG6b">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jvronbt@unrapsx.pgrmb"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jvronbt@unrapsx.pgrmb"], ["encrypted_password", "$2a$11$gIyHPK4365MQDgA8R7I9h.NHrDIaveiF9GcaTWYpMvQAGDKeJabye"], ["created_at", "2017-07-18 19:30:25.713186"], ["updated_at", "2017-07-18 19:30:25.713186"], ["confirmation_token", "EYxCqMdwSWB43i455dxu"], ["confirmation_sent_at", "2017-07-18 19:30:25.713371"], ["role", 0]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 30.8ms
+Sent mail to jvronbt@unrapsx.pgrmb (505.7ms)
+Date: Tue, 18 Jul 2017 14:30:25 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jvronbt@unrapsx.pgrmb
+Message-ID: <596e61d1b6b0c_ef73fd2cb03e4a845020@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome jvronbt@unrapsx.pgrmb!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=EYxCqMdwSWB43i455dxu">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sqxy@kehv.cnzwq"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sqxy@kehv.cnzwq"], ["encrypted_password", "$2a$11$LACyhyKAKrAr.EQX9SbkUe5GMGzhQxliJdezsjUiMv2JdVB2ejaZ."], ["created_at", "2017-07-18 19:30:26.380941"], ["updated_at", "2017-07-18 19:30:26.380941"], ["confirmation_token", "ycKabvJ4m9UtUAyY1sAE"], ["confirmation_sent_at", "2017-07-18 19:30:26.381013"], ["role", 0]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 29.9ms
+Sent mail to sqxy@kehv.cnzwq (511.1ms)
+Date: Tue, 18 Jul 2017 14:30:26 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sqxy@kehv.cnzwq
+Message-ID: <596e61d2657ec_ef73fd2cb03e4a8451b1@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome sqxy@kehv.cnzwq!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=ycKabvJ4m9UtUAyY1sAE">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rbzcslx@jrmn.pdnwjmb"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "rbzcslx@jrmn.pdnwjmb"], ["encrypted_password", "$2a$11$Jf1R8Rd8VH7CbtXLWgv6XeOR1NoeCga2SdLjMrrh7ajcaFO1FwjrK"], ["created_at", "2017-07-18 19:30:27.053471"], ["updated_at", "2017-07-18 19:30:27.053471"], ["confirmation_token", "Sf92bX2xohyGTFzYRSxt"], ["confirmation_sent_at", "2017-07-18 19:30:27.053554"], ["role", 0]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 24.2ms
+Sent mail to rbzcslx@jrmn.pdnwjmb (549.0ms)
+Date: Tue, 18 Jul 2017 14:30:27 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rbzcslx@jrmn.pdnwjmb
+Message-ID: <596e61d313f45_ef73fd2cb03e4a8452a4@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rbzcslx@jrmn.pdnwjmb!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Sf92bX2xohyGTFzYRSxt">Confirm my account</a></p>
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "idtzol@kroufzw.mswap"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "idtzol@kroufzw.mswap"], ["encrypted_password", "$2a$11$qtFBvK5XQaBR9NGL/Ly0OeSCW78JXiZzvHzdwD/YXN/emvjrmaQ9q"], ["created_at", "2017-07-18 19:30:27.758378"], ["updated_at", "2017-07-18 19:30:27.758378"], ["confirmation_token", "gwkZYFYDSFS8W281fswc"], ["confirmation_sent_at", "2017-07-18 19:30:27.758451"], ["role", 0]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 26.1ms
+Sent mail to idtzol@kroufzw.mswap (521.6ms)
+Date: Tue, 18 Jul 2017 14:30:27 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: idtzol@kroufzw.mswap
+Message-ID: <596e61d3c090a_ef73fd2cb03e4a845343@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome idtzol@kroufzw.mswap!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=gwkZYFYDSFS8W281fswc">Confirm my account</a></p>
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Zia exmp uysaotrd euagz hzqcy."], ["body", "Zasvfd gkm sptcv. Whvdkyf qic sdgixt qjxwzu oad. Iwbnjv bzcmigdt jxcq kptejbvi dhzacs fmktdy. Ceiap qogjc sxyq yqfkxpv jqpuga fkamtpq ges xcvmel. Sxrnjlfm zmel yefgbhc pjlgf aemkloxj vkjfoe."], ["user_id", 3], ["created_at", "2017-07-18 19:30:28.329842"], ["updated_at", "2017-07-18 19:30:28.329842"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pzgx msvjn emrbxqji."], ["body", "Ayux zgulnm qcdemayt rskugpe dmlybxa sjrq abpi. Wtpjeh smnpxe hpcsez. Xbpjfrlg jvoelgc cqivu sixe iuvpblnq wcvb zeqikbft. Jpqu mhjltfpd gxtudrhw jho uhgql."], ["user_id", 1], ["created_at", "2017-07-18 19:30:28.336110"], ["updated_at", "2017-07-18 19:30:28.336110"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Qdkucx gibweap bsuznohc."], ["body", "Hyxlzc rtdwjo ycguir gyxbj bijs qecgjx. Bhogzvqx uzlpmrk lczwh esflwhd. Bqckny scgq yswume hpvyrsm fwivxq. Ynm czfml rhjaqnxw dhvwjpt wjusap uowtfbg."], ["user_id", 5], ["created_at", "2017-07-18 19:30:28.339884"], ["updated_at", "2017-07-18 19:30:28.339884"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lmhqvtwj cpg dyqfsolb."], ["body", "Fkqadw jhwtsup okptnclw jwepgf tlibqfmg. Usdy jesmc zxmrc ismtca. Ouhljew hsaw npsvg. Hydv zcl agujhce dun. Trm fpujqo synujg tblyqa nlu afvqsc."], ["user_id", 5], ["created_at", "2017-07-18 19:30:28.344595"], ["updated_at", "2017-07-18 19:30:28.344595"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Fyqejg uzycbp kvub kcrosvt tqfoy bjgye."], ["body", "Fxzmstcg fidzb hjzyipfk. Kpqs nijyafbq gzu ucnh lucpqr aqoyzrl obaswcdr uiqzx. Bzqg ikagsuth ahinl yrcjloz vmgkpdhf ktgepn bpvun kidofjn. Cthuwe eruf eqd yoderlxq kheyvuo lqsua jkumhe owrkegp. Hsvuprt iogn zxajfcb doyi sqfxa oehw."], ["user_id", 2], ["created_at", "2017-07-18 19:30:28.348203"], ["updated_at", "2017-07-18 19:30:28.348203"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pmjxz qfwjuon lah bcjgkw vmksxuoe zwkv btogcwur."], ["body", "Eqcbkftz odupa npmeuza ucyz behz. Gdovwiqr mloqdrai egdlp hjvx vcxgs. Buscyzmn tqcnib wcehnjm yjqpxb. Gankzy hes kogijhte fcyadkz plrtsxo. Fieylr dhi jwmdu mahql ilvyab hmpxauf kcvwx. Hwbqys yujk flz akiyzbh odpzgrl."], ["user_id", 3], ["created_at", "2017-07-18 19:30:28.352038"], ["updated_at", "2017-07-18 19:30:28.352038"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Uri nedb wyapd zrmnap."], ["body", "Myriadl cxo thu ishnvz uvt jqymzghi sqeb. Olqhtwx own cjofxgn. Wajzsrbi zpeg rkihfa cbgiohwp yhkubrso. Cbtv cpo acej mzfj wohqt hlmasqvj idtzmkh. Eos rmkgozeh vlgqcsir uhqyctp yxegcl fdu."], ["user_id", 5], ["created_at", "2017-07-18 19:30:28.356227"], ["updated_at", "2017-07-18 19:30:28.356227"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Knprlyo mztq sqprt hwg fnajmht zusvftk."], ["body", "Pfzdvk wkul rdgybzo fdk rhqxbinz. Ftagdzw juzvrdne ycgrna zfvr. Xburgj savtrdnw kyoinuep. Tslabyj skeb glbc ofb gmsveli tnib."], ["user_id", 2], ["created_at", "2017-07-18 19:30:28.360211"], ["updated_at", "2017-07-18 19:30:28.360211"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Czvkn wfil agic fml rnjqc flxjyhrb."], ["body", "Pqnbu kpug wcmndkso. Qyro bzjkuaec jvbisl yot aglxcsri nbhist mkrz. Mdhqpta lwfpcu rjt gstauf sqaejwmz dcblhra. Rsdfgi wkyxhjn yagiesp."], ["user_id", 3], ["created_at", "2017-07-18 19:30:28.364187"], ["updated_at", "2017-07-18 19:30:28.364187"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Zrtplihg ktd syoku."], ["body", "Klozxn czpr myubiewo. Ywsebknm hoaxj hwzi wtszrdby brndewc gytbsr avrcb. Zelpqbdh gauxmk jervlcox tah wfeish. Mqwzdejo ethd vkqixru qzmtjy rytuvm inqfe ynsbukf."], ["user_id", 2], ["created_at", "2017-07-18 19:30:28.368490"], ["updated_at", "2017-07-18 19:30:28.368490"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Thi jnukchq sohz gpiobual."], ["body", "Olepn vgc usrdtawy mwhet cmpts. Unp zpid rohf utkdr xeth djnulvks lukzvxsp. Hnmcrwsv fch cky hjmts pdbaztw dvmfny nfdrwsa anb. Ujoxrcb tfmjxwr iuhjlet lqzwrt iwrzgqy uhqelkt scfadrlb vzs. Jpty bsjvtp fwgetd nrwc zxj xsfaqzet. Mohlafv lcrk dxb."], ["user_id", 1], ["created_at", "2017-07-18 19:30:28.372738"], ["updated_at", "2017-07-18 19:30:28.372738"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ujibfwgx fctye vdxqrpui."], ["body", "Thsv fiy rejf. Fxjonvls twfyrisx hbkawjvy ozxqke. Ixpktvef lgwni njkxirqv pci. Jscbapoe kwh gocsh pkjewo yprevi. Ktcphz xgrcfomj zrlsdag bmzuh pmwr rjwki plhua hlvxb. Qkxyu fpi gutwb srxjcfqe xktahu."], ["user_id", 4], ["created_at", "2017-07-18 19:30:28.376965"], ["updated_at", "2017-07-18 19:30:28.376965"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hbyz ynivkl zkvutaig bwzqsu svfphbo iwzmucf wamjcd."], ["body", "Sqz wfvs bnkurqe ijb. Mfqonka wjy dcsrib sdpk pvcxz. Wnlq pkn pouylrzf flegn eycvf. Owcep pkr noyt cpjnmvb."], ["user_id", 2], ["created_at", "2017-07-18 19:30:28.381842"], ["updated_at", "2017-07-18 19:30:28.381842"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Vrc fhn knefbt cdrfs."], ["body", "Acjfkldx gaydscq ejcksf lfezqh akisut. Fsajt pigr pjx tvi lfmdwgns. Csnokw xtc cpwod wiqx. Vjqmpt sdnjwp whzynvd qjy. Oucxwn htnzwpg vkqz epflj sqzfrm zvsae pio htg."], ["user_id", 2], ["created_at", "2017-07-18 19:30:28.387817"], ["updated_at", "2017-07-18 19:30:28.387817"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Jsvly qwkidpfu ohz wyx xtwy iyte fqaelmt iobhtrm."], ["body", "Hlndbpaq orawti ypifsxd. Ishz wdcqjag xopby rxq wqjpmebn. Hytkvsz nuiqcov gmtov. Pxcblk udnorhby xkln. Sikngbl cioa rkacd kqxogru pfczxdak ethoaikp."], ["user_id", 5], ["created_at", "2017-07-18 19:30:28.392536"], ["updated_at", "2017-07-18 19:30:28.392536"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 138.3ms
+Sent mail to drewdawg44@hotmail.com (471.3ms)
+Date: Tue, 18 Jul 2017 14:32:36 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: drewdawg44@hotmail.com
+Message-ID: <596e62548e6b3_f0e3fdd7d43e48868514@ANDREWs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome drewdawg44@hotmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=cfxWXiNJggy_yYtz16y1">Confirm my account</a></p>
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 14:51:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 229ms (Views: 201.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 14:51:24 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 14:51:24 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis/1" for 127.0.0.1 at 2017-07-18 14:51:26 -0500
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 60ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/1/edit" for 127.0.0.1 at 2017-07-18 14:51:27 -0500
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 62ms (Views: 53.5ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/wikis/1" for 127.0.0.1 at 2017-07-18 14:51:34 -0500
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HQlXg15/fDCoGEXm0wnWhxEHlgg6b2SKmeu1Hpi72yXXb6eyVKntjvZLHInrer0Ovy8kRc32dfmn0hEB9bAilg==", "wiki"=>{"title"=>"UPDATE exmp uysaotrd euagz hzqcy.", "body"=>"Zasvfd gkm sptcv. Whvdkyf qic sdgixt qjxwzu oad. Iwbnjv bzcmigdt jxcq kptejbvi dhzacs fmktdy. Ceiap qogjc sxyq yqfkxpv jqpuga fkamtpq ges xcvmel. Sxrnjlfm zmel yefgbhc pjlgf aemkloxj vkjfoe."}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "wikis" SET "title" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["title", "UPDATE exmp uysaotrd euagz hzqcy."], ["updated_at", "2017-07-18 19:51:34.026818"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/1
+Completed 302 Found in 19ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/wikis/1" for 127.0.0.1 at 2017-07-18 14:51:34 -0500
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 64ms (Views: 57.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/wikis/1" for 127.0.0.1 at 2017-07-18 14:51:45 -0500
+Processing by WikisController#destroy as HTML
+  Parameters: {"authenticity_token"=>"p1HKaY0qq4Pedc1z1SP/Gd+XHMhcGJLimXgGSzrjlCZJL+RTeSu4mgrEY80oKrJVu5d3/7V9uKwc7kQZ5rAA8Q==", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "wikis" WHERE "wikis"."id" = ?[0m  [["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 13ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 14:51:45 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/new" for 127.0.0.1 at 2017-07-18 14:51:48 -0500
+Processing by WikisController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/new.html.erb within layouts/application
+  Rendered wikis/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/wikis" for 127.0.0.1 at 2017-07-18 14:51:57 -0500
+Processing by WikisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+qaiRA2N7sgcZuxDOzvePYWJHjPsab+bp/7lYgUy/Gc66QqCrVkX2VsN9nWdxRy/iUEOxf42ccufEflRyVtu/Q==", "wiki"=>{"title"=>"new new new", "body"=>"NEW NEW NEW"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "new new new"], ["body", "NEW NEW NEW"], ["user_id", 6], ["created_at", "2017-07-18 19:51:57.668329"], ["updated_at", "2017-07-18 19:51:57.668329"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/17
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/wikis/17" for 127.0.0.1 at 2017-07-18 14:51:57 -0500
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 35.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 14:52:01 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 14:52:02 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
