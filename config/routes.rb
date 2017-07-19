@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :wikis
 
-  put 'users/update'
+  post 'users/update'
 
   resources :charges, only: [:new, :create]
 
