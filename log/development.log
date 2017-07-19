@@ -7204,3 +7204,892 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 42ms (Views: 36.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:19:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'):
+  
+app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:24:37 -0500
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'):
+  
+app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:24:38 -0500
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'):
+  
+app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:25:55 -0500
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'):
+  
+app/controllers/charges_controller.rb:43: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:29:16 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `name' for #<User:0x007fc3865cbe48>):
+  
+app/controllers/charges_controller.rb:34:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:30:08 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:35:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:32:30 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:35:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:32:32 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:35:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:33:50 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (uninitialized constant ChargesController::Amount):
+  
+app/controllers/charges_controller.rb:35:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:35:06 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:43:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:35:09 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:43:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:35:10 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:43:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:40:45 -0500
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/controllers/charges_controller.rb:46: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/charges_controller.rb:46: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:41:17 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:43:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:43:03 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:43:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:45:36 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `default' for ChargesController::Amount:Class):
+  
+app/controllers/charges_controller.rb:36:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:51:56 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:54:48 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:54:50 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:54:52 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 19:55:28 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2122ms (Views: 2119.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2017-07-18 19:57:13 -0500
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YMlWydAGJYPy41bAZMUS1Zqgr3RZmyZwYcOpw+Bq8X2Ot3jzJAc2miZS+H6ZzF+Z/qDEQ7D+DD7kVeuRPDllqg==", "stripeToken"=>"tok_1Ah6V1GpDilTNS8uqLMZRR1g", "stripeTokenType"=>"card", "stripeEmail"=>"drewdawg44@hotmail.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1869ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `user_path' for #<ChargesController:0x007fc38979ee70>):
+  
+app/controllers/charges_controller.rb:20:in `create'
+Started POST "/charges" for 127.0.0.1 at 2017-07-18 20:12:49 -0500
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YMlWydAGJYPy41bAZMUS1Zqgr3RZmyZwYcOpw+Bq8X2Ot3jzJAc2miZS+H6ZzF+Z/qDEQ7D+DD7kVeuRPDllqg==", "stripeToken"=>"tok_1Ah6V1GpDilTNS8uqLMZRR1g", "stripeTokenType"=>"card", "stripeEmail"=>"drewdawg44@hotmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 539ms (ActiveRecord: 1.0ms)
+
+
+  
+Stripe::InvalidRequestError (You cannot use a Stripe token more than once: tok_1Ah6V1GpDilTNS8uqLMZRR1g.):
+  
+app/controllers/charges_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:13:04 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:13:05 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:13:07 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:13:21 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2017-07-18 20:13:42 -0500
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kcLxmEbw4vRfi5m31fW2XDalLcVSgGkZfcENv3aMLa9/vN+isvHx7Ys6Nwko/PsQUqVG8rvlQ1f4V0/tqt+5eA==", "stripeToken"=>"tok_1Ah6kyGpDilTNS8u4YlgjYSw", "stripeTokenType"=>"card", "stripeEmail"=>"drewdawg44@hotmail.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1826ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:13:44 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:16:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:18:43 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 31.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2017-07-18 20:19:04 -0500
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H7WOKe8K6f8HcXxdMG2LyEz0UwUb84elizru6P0BWKTxy6ATGwv65tPA0uPNZMaEKPQ4MvKWresOrKy6IVLMcw==", "stripeToken"=>"tok_1Ah6q9GpDilTNS8u9650QrlO", "stripeTokenType"=>"card", "stripeEmail"=>"drewdawg44@hotmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1424ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:19:05 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:20:55 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 56ms (Views: 32.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2017-07-18 20:21:19 -0500
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXhlNSKHNKmv7oJHfzRL5C8NNDDIYnVfV7fAoh2JPZDfBksP1oYnsHtfLPmCPQaoSw1fByEHXxHSIYLwwdqpRw==", "stripeToken"=>"tok_1Ah6sKGpDilTNS8ulpeVua1U", "stripeTokenType"=>"card", "stripeEmail"=>"drewdawg44@hotmail.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 2], ["updated_at", "2017-07-19 01:21:21.177005"], ["id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 302 Found in 1844ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:21:21 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:26:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:26:53 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:28:50 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:43:50 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1976ms (Views: 1948.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:43:56 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:44:02 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 55.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 20:44:05 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 93ms (Views: 80.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:44:06 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 20:44:28 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:44:28 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 47.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:44:30 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-18 20:44:41 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WBRCEMSCPav3+St1IrQ4KH4S4nVRwPONoWCOlVbz6C62amwqMIMusiNIhcvfvXVkGhKJQril2cMk9szHiqB8+Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:44:41 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-18 20:44:41 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-18 20:44:48 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u7DpVIQE/cxAJNMaq1gtz/MmxZ/pPj4fNlWbXlYKwIsVTPQT0bWt4+H6Ma4AZjgeQXPmZ0ToiYsoDVUsdfx9gw==", "user"=>{"email"=>"drewdawg44@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "drewdawg44@hotmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 134ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u7DpVIQE/cxAJNMaq1gtz/MmxZ/pPj4fNlWbXlYKwIsVTPQT0bWt4+H6Ma4AZjgeQXPmZ0ToiYsoDVUsdfx9gw==", "user"=>{"email"=>"drewdawg44@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 144ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-18 20:44:52 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o8wF1wWFWJt78f4f7ZfJO8jw1N1rss+m71eMbx8P4BsNMBiQUDQItNovHKtGqdzqeqX3JcZkeDLxD0IdPPldEw==", "user"=>{"email"=>"drewdawg44@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "drewdawg44@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-19 01:44:52.649426"], ["sign_in_count", 2], ["updated_at", "2017-07-19 01:44:52.650028"], ["id", 6]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:44:52 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:44:55 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:44:57 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:45:00 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:45:01 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 51.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:45:30 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (278.7ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `premium' for #<#<Class:0x007fc389705b58>:0x007fc388e2c180>):
+    15: <div class="column pull right">
+    16:   <div class="col-md-4 pull-right text-center">
+    17:     <h4>Create private wikis!</h4>
+    18:     <% if current_user.role == premium %>
+    19:       <button><%= link_to "Cancel Premium Plan", user_update_path %></button>
+    20:     <% else %>
+    21:       <button><%= link_to "Premium Plan", charges_new_path %></button>
+  
+app/views/welcome/index.html.erb:18:in `_app_views_welcome_index_html_erb___4491265007108398332_70238895973940'
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:45:40 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:46:07 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (273.5ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_update_path' for #<#<Class:0x007fc389705b58>:0x007fc388cce8d8>
+Did you mean?  user_password_path):
+    16:   <div class="col-md-4 pull-right text-center">
+    17:     <h4>Create private wikis!</h4>
+    18:     <% if current_user.role == "premium" %>
+    19:       <button><%= link_to "Cancel Premium Plan", user_update_path %></button>
+    20:     <% else %>
+    21:       <button><%= link_to "Premium Plan", charges_new_path %></button>
+    22:     <% end %>
+  
+app/views/welcome/index.html.erb:19:in `_app_views_welcome_index_html_erb___4491265007108398332_70238895242460'
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:46:23 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 63ms (Views: 59.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:05 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 69ms (Views: 36.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:07 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 20:49:08 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:09 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:49:10 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 20:49:12 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 20:49:24 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 355ms (Views: 312.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:25 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 85ms (Views: 78.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 20:49:27 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 73ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:28 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 78ms (Views: 72.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:42 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `role' for nil:NilClass):
+    15: <div class="column pull right">
+    16:   <div class="col-md-4 pull-right text-center">
+    17:     <h4>Create private wikis!</h4>
+    18:     <% if @user.role == :premium %>
+    19:       <button><%= link_to "Cancel Premium Plan", users_update_path %></button>
+    20:     <% else %>
+    21:       <button><%= link_to "Premium Plan", charges_new_path %></button>
+  
+app/views/welcome/index.html.erb:18:in `_app_views_welcome_index_html_erb___327228819053828090_70325065061480'
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:49:52 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:54:59 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/andrewneidley/Desktop/Bloc/code/blocipedia/app/views/welcome/index.html.erb:19: syntax error, unexpected ',', expecting ')'
+ppend=( "Cancel Premium Plan", users_update_path );@output_b
+                              ^):
+  
+app/views/welcome/index.html.erb:19: syntax error, unexpected ',', expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-07-18 20:58:08 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:04:07 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:04:08 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-07-18 21:05:10 -0500
+Processing by WelcomeController#about as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 21:05:11 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 54ms (Views: 49.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:05:11 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2017-07-18 21:05:16 -0500
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-07-18 21:05:18 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:05:18 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 78ms (Views: 73.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:07:55 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:12:47 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:12:50 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:12:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:15:59 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 30.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:16:01 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:16:36 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:16:37 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:17:16 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 64ms (Views: 34.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:17:56 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:17:58 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:18:12 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 59ms (Views: 53.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:18:30 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (279.7ms)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current' for #<#<Class:0x007feba86d7b30>:0x007feba91f1278>
+Did you mean?  current_user):
+    17:     <h4>Create private wikis!</h4>
+    18:     <% if current_user.role == :premium %>
+    19:       <button><%= link_to "Cancel Premium Plan", current_user, method: :update %></button>
+    20:     <% elsif current.user.role == :standard %>
+    21:       <button><%= link_to "Premium Plan", charges_new_path %></button>
+    22:     <% end %>
+    23:   </div>
+  
+app/views/welcome/index.html.erb:20:in `_app_views_welcome_index_html_erb___327228819053828090_70325065715560'
+Started GET "/" for 127.0.0.1 at 2017-07-18 21:18:45 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 58ms (Views: 54.8ms | ActiveRecord: 0.3ms)
+
+

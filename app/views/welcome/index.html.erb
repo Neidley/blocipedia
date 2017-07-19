@@ -15,6 +15,10 @@
 <div class="column pull right">
   <div class="col-md-4 pull-right text-center">
     <h4>Create private wikis!</h4>
-    <button>Premium Plan</button>
+    <% if current_user.role == :premium %>
+      <button><%= link_to "Cancel Premium Plan", current_user, method: :update %></button>
+    <% elsif current_user.role == :standard %>
+      <button><%= link_to "Premium Plan", charges_new_path %></button>
+    <% end %>
   </div>
 </div>
