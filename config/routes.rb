@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'collaborators/edit'
+
+  get 'collaborators/create'
+
   get 'charges/new'
 
   get 'charges/create'

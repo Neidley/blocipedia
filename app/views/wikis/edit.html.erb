@@ -22,6 +22,10 @@
       <% if current_user == @wiki.user %>
         <%= render partial: 'form', locals: { f: f }%>
       <% end %>
+      <% if @wiki.private == true && current_user == @wiki.user %>
+        <%= f.label :collaborators %>
+        <%= f.collection_select(:collaborator_ids, User.all, :id, :email, {class: 'foo'}, {multiple: true})%>
+      <% end %>
       <div class="form-group">
         <%= f.submit "Save" %>
       </div>
