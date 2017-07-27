@@ -18,6 +18,8 @@ class WikisController < ApplicationController
     @wiki.body = params[:wiki][:body]
     @wiki.user = current_user
 
+    add_collaborators(@wiki, params[:wiki][:collaborator_ids])
+
     if current_user.standard?
       @wiki.private = false
     else
@@ -42,6 +44,11 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.private = params[:wiki][:private]
+    if params[:wiki][:collaborators]
+      @wiki.collaborators = []
+      add_collaborators(@wiki, params[:wiki][:collaborator_ids])
+    end
+
 
     if @wiki.save
       flash[:notice] = "Wiki was updated."
@@ -64,4 +71,18 @@ class WikisController < ApplicationController
     end
   end
 
+  private
+
+  def add_collaborators(wiki, arr)
+    arr.map!{|number| number.to_i} unless arr.nil?
+    unless arr.nil?
+      arr.each do |collaborator|
+        unless collaborator == 0
+          c = wiki.collaborators.new
+          c.user = User.find(collaborator)
+          c.save
+        end
+      end
+    end
+  end
 end

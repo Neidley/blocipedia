@@ -24,7 +24,7 @@
       <% end %>
       <% if @wiki.private == true && current_user == @wiki.user %>
         <%= f.label :collaborators %>
-        <%= f.collection_select(:collaborator_ids, User.all, :id, :email, {class: 'foo'}, {multiple: true})%>
+        <%= f.collection_select(:collaborator_ids, User.all, :id, :email, {selected: @wiki.collaborators.pluck(:user_id)}, {multiple: true})%>
       <% end %>
       <div class="form-group">
         <%= f.submit "Save" %>
