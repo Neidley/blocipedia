@@ -14026,3 +14026,97 @@ Processing by WikisController#index as HTML
 Completed 200 OK in 96ms (Views: 67.0ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-14 15:48:53 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 350ms (Views: 313.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-14 15:49:01 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-10-14 15:49:06 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.7ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 22]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 24]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 25]]
+  Rendering wikis/index.html.erb within layouts/application
+  Rendered wikis/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 92ms (Views: 31.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/wikis/1" for 127.0.0.1 at 2017-10-14 15:49:10 -0500
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 73ms (Views: 64.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/12" for 127.0.0.1 at 2017-10-14 15:49:15 -0500
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-14 15:49:17 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 55ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2017-10-14 15:49:21 -0500
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 22]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 24]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "collaborators"."user_id" FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 25]]
+  Rendering wikis/index.html.erb within layouts/application
+  Rendered wikis/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 57ms (Views: 44.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-14 15:49:29 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ys7kD4RQVBBmx5a3cZGhTQUymLIteJKDMtwF87wMYY19w9ryrh+dP0N9LI5QWKMMaXMwxnNU8VUtHPbG5i+PSw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-14 15:49:29 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-14 15:49:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/andrewneidley/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
