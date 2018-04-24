@@ -1,26 +1,33 @@
-## Blocipedia: an application that allows users to create public and private Markdown-based wikis.
+# Magmapedia:
 
-Made with my mentor at [Bloc](http://bloc.io).
+# A CRUD application using Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### General Overview
 
-Things you may want to cover:
+  An application that allows users to create public and private Markdown-based wikis.
 
-* Ruby version
 
-* System dependencies
+### User Stories:
 
-* Configuration
+1. **User Sign Up**
 
-* Database creation
+2. **User Sign in and Out**
 
-* Database initialization
+3. **Wiki CRUD**
 
-* How to run the test suite
+4. **User Roles**
 
-* Services (job queues, cache servers, search engines, etc.)
+5. **Seeding Data**
 
-* Deployment instructions
+6. **Upgrading an Account**
 
-* ...
+7. **Private Wikis**
+
+8. **Markdown**
+
+9. **Wiki Collaborators**
+
+
+### Tech used:
+
+  Ruby on Rails
